@@ -14,7 +14,7 @@ const users = [
   {name: "Lux", active: false},
 ];
 
-const toggleUserState = (allUsers, userName, callback) => {
+const toggleUserState = (allUsers, userName) => {
   const updatedUsers = allUsers.map((user) =>
     user.name === userName ? {...user, active: !user.active} : user
   );
@@ -33,5 +33,8 @@ toggleUserState(users, "Lux", logger);
 /*
  * Должно работать так
  */
-toggleUserState(users, "Mango").then(logger);
-toggleUserState(users, "Lux").then(logger);
+// toggleUserState(users, "Mango").then(logger);
+// toggleUserState(users, "Lux").then(logger);
+
+toggleUserState(users, "Mango").then(console.log);
+toggleUserState(users, "Lux").then(console.log());
